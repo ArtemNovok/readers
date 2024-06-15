@@ -55,7 +55,6 @@ func ReadFileWithOffSetMap(fileName string, offset int64, size int64, mp map[run
 	for _, char := range str {
 		mp[char]++
 	}
-	log.Println(fmt.Sprintf("%s", buf))
 	buf = nil
 	return n, nil
 }
