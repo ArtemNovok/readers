@@ -1,15 +1,17 @@
 package main
 
 import (
-	"log"
+	"fmt"
 
 	"github.com/ArtemNovok/readers/readers"
 )
 
 func main() {
-	mapp, err := readers.ReadFileInc("test1.txt")
+	mapp, err := readers.ReadFileIncMap("test1.txt", 2)
 	if err != nil {
 		panic(err)
 	}
-	log.Println(mapp)
+	for key, val := range mapp {
+		fmt.Printf("%s: %v\n", string(key), val)
+	}
 }
